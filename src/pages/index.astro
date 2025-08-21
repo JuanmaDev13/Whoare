@@ -1,6 +1,11 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import HeroKeyBackground from "@/assets/Eminemcia.svg"
+import Layout from "@/layouts/Layout.astro";
+import HeroKeyBackground from "@/assets/Eminemcia.svg";
+import foto1 from "@/assets/Modelo.jpg";
+import foto2 from "@/assets/aaaaaaaa.jpg";
+import foto3 from "@/assets/rap.jpg";
+import foto4 from "@/assets/sasa.jpg";
+import foto5 from "@/assets/sssss.jpg";
 ---
 
 <Layout>
@@ -19,10 +24,7 @@ import HeroKeyBackground from "@/assets/Eminemcia.svg"
 
   <!-- Footer fijo -->
   <div class="fixed flex flex-col items-center justify-between h-screen px-10 w-full">
-    <footer
-      id="hero-footer"
-      class="absolute -bottom-1/4 m-auto"
-    >
+    <footer id="hero-footer" class="absolute -bottom-1/4 m-auto">
       <span
         class="absolute uppercase tracking-[6px] whitespace-nowrap text-center top-[49px] font-medium text-shadow-[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000] left-1/2 -translate-x-1/2 text-lg"
       ></span>
@@ -32,18 +34,17 @@ import HeroKeyBackground from "@/assets/Eminemcia.svg"
   <!-- Textos con animaciones -->
   <div class="fixed inset-0 flex items-center justify-center pointer-events-none">
 
-
-    <div id="texto-2" class="mb-8 absolute top-10  opacity-0 text-center">
+    <div id="texto-2" class="mb-8 absolute top-10 opacity-0 text-center">
       <h2 class="text-center text-3xl font-bold text-white mb-5">Que Ofrecemos</h2>
       <p class="text-center text-sm text-gray-300 max-w-lg">
-          Tienda urbana para quienes viven el <span class="text-fuchsia-400">hip hop</span>. Bolsos ligeras de <span class="text-fuchsia-400">lona</span>
-          y accesorios de edición limitada que combinan <span class="text-fuchsia-400">estilo</span>, funcionalidad y actitud, 
-          diseñados para llevar tus esenciales con <span class="text-fuchsia-400">personalidad</span>.
-
+        Tienda urbana para quienes viven el <span class="text-fuchsia-400">hip hop</span>.
+        Bolsos ligeras de <span class="text-fuchsia-400">lona</span> y accesorios de edición limitada
+        que combinan <span class="text-fuchsia-400">estilo</span>, funcionalidad y actitud,
+        diseñados para llevar tus esenciales con <span class="text-fuchsia-400">personalidad</span>.
       </p>
     </div>
 
-    <div id="texto-3" class="absolute top-50 left-12 opacity-0 ">
+    <div id="texto-3" class="absolute top-50 left-12 opacity-0">
       <h2 class="text-left text-2xl font-bold text-white mb-2">La banda</h2>
       <p class="text-left text-lg text-gray-300 max-w-xs">
         Gente que respira <span class="text-fuchsia-400">Hip Hop</span>, que lo
@@ -51,7 +52,7 @@ import HeroKeyBackground from "@/assets/Eminemcia.svg"
       </p>
     </div>
 
-    <div id="texto-4" class="absolute top-50 right-12 opacity-0 ">
+    <div id="texto-4" class="absolute top-50 right-12 opacity-0">
       <h2 class="text-right text-2xl font-bold text-white mb-2">Nuestra Ambición</h2>
       <p class="text-lg text-gray-300 max-w-96 text-right">
         Dar visibilidad al <span class="text-fuchsia-400">movimiento</span> hip hop y
@@ -60,16 +61,13 @@ import HeroKeyBackground from "@/assets/Eminemcia.svg"
     </div>
 
     <!-- Carrusel estático -->
-    <div
-      id="carousel"
-      class="absolute bottom-11 left-1/2 -translate-x-1/2 w-full max-w-4xl opacity-0 pointer-events-auto"
-    >
+    <div id="carousel" class="absolute bottom-11 left-1/2 -translate-x-1/2 w-full max-w-4xl opacity-0 pointer-events-auto">
       <div id="carousel-inner" class="flex justify-center gap-4">
-        <img src="/src/assets/Modelo.jpg" class="w-44 md:w-56 h-44 md:h-56 object-cover rounded-xl" />
-        <img src="/src/assets/sasa.jpg" class="w-44 md:w-56 h-44 md:h-56 object-cover rounded-xl" />
-        <img src="/src/assets/rap.jpg" class="w-44 md:w-56 h-44 md:h-56 object-cover rounded-xl" />
-        <img src="/src/assets/sssss.jpg" class="w-44 md:w-56 h-44 md:h-56 object-cover rounded-xl" />
-        <img src="/src/assets/aaaaaaaa.jpg" class="w-44 md:w-56 h-44 md:h-56 object-cover rounded-xl" />
+        <img src={foto1.src} class="w-44 md:w-56 h-44 md:h-56 object-cover rounded-xl" />
+        <img src={foto2.src} class="w-44 md:w-56 h-44 md:h-56 object-cover rounded-xl" />
+        <img src={foto3.src} class="w-44 md:w-56 h-44 md:h-56 object-cover rounded-xl" />
+        <img src={foto4.src} class="w-44 md:w-56 h-44 md:h-56 object-cover rounded-xl" />
+        <img src={foto5.src} class="w-44 md:w-56 h-44 md:h-56 object-cover rounded-xl" />
       </div>
     </div>
 
@@ -86,31 +84,27 @@ import HeroKeyBackground from "@/assets/Eminemcia.svg"
 <style>
   #logo-mask {
     background: white;
-    mask-image: url('/src/assets/DleyTC.svg');
+    mask-image: url({HeroKeyBackground.src});
     mask-position: center;
     mask-repeat: no-repeat;
     mask-size: clamp(20000vh, 3500%, 0vh);
   }
-#carousel {
-  mask-image: linear-gradient(to top, rgba(0,0,0,0) 80%, rgba(0,0,0,1) 70%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 150%);
-}
-
+  #carousel {
+    mask-image: linear-gradient(to top, rgba(0,0,0,0) 80%, rgba(0,0,0,1) 70%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 150%);
+  }
 </style>
 
 <script>
-  import { gsap } from "gsap"
-  import { ScrollTrigger } from "gsap/ScrollTrigger"
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
 
   gsap
     .timeline({
       ease: "power2.out",
-      scrollTrigger: {
-        scrub: 1,
-        end: "200vh top",
-      },
+      scrollTrigger: { scrub: 1, end: "200vh top" },
     })
     .to("#logo-mask", { maskSize: "clamp(40vh, 25%, 300%)" }, 0.15)
     .to("#hero-key", { opacity: 0, duration: 0.2 }, 0.4)
@@ -119,5 +113,5 @@ import HeroKeyBackground from "@/assets/Eminemcia.svg"
     .to("#texto-3", { opacity: 1, x: 0, duration: 0.3 }, 2.0)
     .to("#texto-4", { opacity: 1, x: 0, duration: 0.3 }, 2.5)
     .to("#carousel", { opacity: 1, y: 0, duration: 0.5 }, 3.0)
-    .to("#texto-5", { opacity: 1, y: 0, duration: 0.3 }, 3.5)
+    .to("#texto-5", { opacity: 1, y: 0, duration: 0.3 }, 3.5);
 </script>
